@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kraken-control"
+version = "0.1.0"
+description = "Linux control application for the NZXT Kraken Elite (2023) cooler: cooling curves and the LCD, in the style of NZXT CAM"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["pillow>=10", "pyusb>=1.2", "numpy>=1.24"]
+
+[project.scripts]
+kraken-control = "krakencontrol.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["krakencontrol*"]
+
+[tool.setuptools.package-data]
+krakencontrol = ["web/*", "web/fonts/*", "assets/fonts/*"]

@@ -1,0 +1,8 @@
+# Kraken Control: user access to the NZXT Kraken Elite (2023) family.
+# Covers both the HID interface (/dev/hidrawN) and the bulk USB interface
+# (/dev/bus/usb/BBB/DDD) because SUBSYSTEMS/ATTRS match by ancestry.
+# "uaccess" grants the logged-in seat; the plugdev group covers headless daemons.
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e71", ATTRS{idProduct}=="300c", TAG+="uaccess", GROUP="plugdev", MODE="0660"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e71", ATTRS{idProduct}=="3012", TAG+="uaccess", GROUP="plugdev", MODE="0660"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e71", ATTRS{idProduct}=="300e", TAG+="uaccess", GROUP="plugdev", MODE="0660"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e71", ATTRS{idProduct}=="3014", TAG+="uaccess", GROUP="plugdev", MODE="0660"

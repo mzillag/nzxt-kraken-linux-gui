@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Kraken Control
+Comment=Control the NZXT Kraken Elite cooler
+Exec=/home/mzillag/Projects/kraken-control/.venv/bin/python -m krakencontrol
+Icon=/home/mzillag/Projects/kraken-control/packaging/kraken-control.png
+Terminal=false
+Categories=System;Utility;
+StartupWMClass=kraken-control

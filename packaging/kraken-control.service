@@ -1,0 +1,15 @@
+[Unit]
+Description=Kraken Control daemon (NZXT Kraken Elite cooling and LCD)
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/Projects/kraken-control/.venv/bin/python -m krakencontrol daemon
+WorkingDirectory=%h/Projects/kraken-control
+Restart=on-failure
+RestartSec=5
+# Let a frame in flight finish before the interface is released
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target
