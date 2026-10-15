@@ -36,6 +36,7 @@ Not affiliated with NZXT. "NZXT", "Kraken" and "CAM" are trademarks of NZXT Inc.
 cd ~/Projects/kraken-control
 python3 -m venv --system-site-packages .venv
 .venv/bin/pip install -r requirements.txt
+.venv/bin/pip install -e .          # makes `python -m krakencontrol` work from any directory
 (cd native/q565 && cargo build --release)      # optional, faster LCD frames
 sudo sh packaging/install-udev.sh               # one time: USB access without root
 ```

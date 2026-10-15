@@ -18,8 +18,9 @@ import sys
 LOGGER = logging.getLogger(__name__)
 
 APP_ID = "org.krakencontrol.App"  # also the name of the .desktop file, so GNOME can match the window
-PACKAGING_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "packaging")
-TRAY_ICON = "kraken-control"       # packaging/kraken-control.png
+# Tray icon: an absolute path is the one form every StatusNotifier host (GNOME's
+# AppIndicator extension, KDE, XFCE) resolves without a theme lookup.
+TRAY_ICON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "web", "icon.png")
 
 
 def run_window(url: str, on_close=None, tray: bool = False, show_window: bool = True,
@@ -151,7 +152,7 @@ def _make_indicator(app):
 
     indicator = AppIndicator.Indicator.new("kraken-control", TRAY_ICON,
                                            AppIndicator.IndicatorCategory.APPLICATION_STATUS)
-    indicator.set_icon_theme_path(PACKAGING_DIR)
+    indicator.set_icon_full(TRAY_ICON, "Kraken Control")
     indicator.set_status(AppIndicator.IndicatorStatus.ACTIVE)
     indicator.set_title("Kraken Control")
 

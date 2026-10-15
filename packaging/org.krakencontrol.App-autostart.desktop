@@ -4,6 +4,7 @@ Name=Kraken Control
 Comment=Tray icon and window at login (the cooling/LCD service itself runs as a systemd user unit)
 Exec=/home/mzillag/Projects/kraken-control/.venv/bin/python -m krakencontrol tray
 Icon=/home/mzillag/Projects/kraken-control/packaging/kraken-control.png
+Path=/home/mzillag/Projects/kraken-control
 Terminal=false
 X-GNOME-Autostart-enabled=true
 StartupWMClass=kraken-control
